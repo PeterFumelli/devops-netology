@@ -1,25 +1,23 @@
 
 # devops-netology
-#Test	
-# В файле .gitignore указаны следующие файлы и части названий файлов, которые будут проигнорированы при пуше 
+#Test
 
-*.tfstate
-*.tfstate.*
+## Правила .gitignore
 
-crash.log
-crash.*.log
+Файл `.gitignore` содержит шаблоны, которые указывают Git, какие файлы нужно игнорировать. Ниже расшифрованы используемые шаблоны:
 
-*.tfvars
-*.tfvars.json
+- `*.tfstate`, `*.tfstate.*` — игнорируются файлы состояния Terraform.
+- `crash.log`, `crash.*.log` — файлы логов сбоев Terraform.
+- `*.tfvars`, `*.tfvars.json` — переменные, содержащие чувствительные данные.
+- `override.tf`, `override.tf.json`, `*_override.tf`, `*_override.tf.json` — файлы переопределения конфигураций.
+- `.terraform.tfstate.lock.info` — файл блокировки состояния Terraform.
+- `.terraformrc`, `terraform.rc` — локальные конфиги Terraform CLI.
 
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
+Используемые шаблоны:
 
-.terraform.tfstate.lock.info
+- `*` — любое количество любых символов;
+- `?` — один любой символ;
+- `**/` — во всех подкаталогах;
+- строка без `/` — правило применимо ко всем уровням вложенности.
 
-.terraformrc
-terraform.rc
-
-
+Таким образом, Git не будет добавлять эти файлы в коммиты, даже если они есть локально.
