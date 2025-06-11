@@ -21,4 +21,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-
+# Ветка fix создана от коммита "Prepare to delete and move"
